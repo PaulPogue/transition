@@ -1,0 +1,151 @@
+/* src/styles/global.css */
+
+/* 1. External Font Imports (always at the very top) */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
+
+/* 2. Tailwind Core Import (Crucial for Tailwind v4 processing) */
+@import "tailwindcss";
+
+/* 3. YOUR CSS CUSTOM PROPERTIES (VARIABLES) - MUST BE HERE OR EARLIER */
+:root {
+  --main-theme-color: #020345;
+  --blue-accent: rgba(0, 123, 255, 0.7);
+  --purple-accent: #4b0cfb;
+  --pink-accent: rgba(244, 114, 182, 0.7);
+  --astro-bg-dark: #000000; /* Or a very deep, deep indigo like #0F0022 */
+  --astro-glow-pink: #ff00c1; /* A vibrant pink/magenta */
+  --astro-glow-blue: #0077ff; /* A vibrant blue */
+  --astro-glow-purple: #7b00ff; /* A vibrant purple */
+  --astro-dark-blue-base: #0b001f; /* A dark, subtle blue/purple base for linear */
+}
+
+/* 4. Tailwind Directives (implicitly handled by @import "tailwindcss" in v4, but good to know) */
+/* If you ever had problems with basic Tailwind not working, you might explicitly add: */
+/* @tailwind base; */
+/* @tailwind components; */
+/* @tailwind utilities; */
+/* But for v4, @import "tailwindcss" often bundles this. For now, assume it's bundled. */
+
+/* 5. Your custom CSS that might use @apply or just regular CSS */
+body {
+  font-family: "Mona Sans", sans-serif;
+}
+
+.container {
+  @apply mx-auto px-4;
+  max-width: 1260px; /* Simplified from your 100% then 1260px */
+}
+
+.font-hubot {
+  font-family: "Hubot Sans", sans-serif;
+}
+
+/* Your existing custom radial gradient class (this should work fine) */
+.bg-radial-gradient {
+  background: radial-gradient(
+    circle,
+    var(--purple-accent) 0%,
+    var(--main-theme-color) 100%
+  );
+}
+
+/* Cosmic Glow - Subtle, diffused accents on a dark base */
+.bg-stacked-cosmic-glow {
+  background:
+    radial-gradient(
+      circle at top right,
+      var(--pink-accent) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      var(--purple-accent) 0%,
+      transparent 60%
+    ),
+    linear-gradient(
+      to bottom right,
+      var(--main-theme-color),
+      color-mix(in srgb, var(--main-theme-color) 70%, var(--blue-accent) 30%)
+    ); /* Added a slight blue mix to main theme for subtle variation */
+  background-size: cover; /* Ensure it covers the whole area */
+  background-position: center;
+}
+
+/* --- Astro.build Inspired Gradient --- */
+.bg-astro-build-hero {
+  /* Layer 1: Top-right pink radial glow */
+  background-image:
+    radial-gradient(
+      circle at 100% 0%,
+      /* Top-right corner */ var(--purple-accent) 0%,
+      transparent 50% /* Controls how far the glow spreads */
+    ),
+    /* Layer 2: Bottom-left blue radial glow */
+      radial-gradient(
+        circle at 0% 100%,
+        /* Bottom-left corner */ var(--main-theme-color) 0%,
+        transparent 50%
+      ),
+    /* Layer 3: Central purple radial glow (slightly off-center for depth) */
+      radial-gradient(
+        circle at 50% 50%,
+        /* Center */ var(--astro-glow-purple) 0%,
+        transparent 70% /* Softer, broader spread */
+      ),
+    /* Layer 4: Deep background linear gradient for overall depth */
+      linear-gradient(
+        to bottom right,
+        /* Subtle diagonal base */ var(--astro-dark-blue-base),
+        var(--astro-bg-dark)
+      );
+
+  background-size: cover; /* Ensures the background covers the entire element */
+  background-position: center; /* Centers the background */
+  background-repeat: no-repeat; /* Prevents repetition if the element is larger */
+}
+
+.text-gradient-astro {
+  display: inline-block;
+  background: linear-gradient(
+    to right,
+    var(--astro-glow-purple),
+    var(--purple-accent)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* For Firefox */
+  color: transparent;
+}
+
+.text-radial-astro {
+  display: inline-block;
+  background: radial-gradient(
+    circle,
+    var(--pink-accent) 0%,
+    var(--blue-accent) 60%,
+    var(--purple-accent) 70%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* For Firefox */
+  color: transparent;
+}
+
+.text-radial-astro-reverse {
+  display: inline-block;
+  background-image: radial-gradient(
+    circle,
+    var(--pink-accent) 0%,
+    var(--blue-accent) 40%,
+    var(--purple-accent) 100%
+  );
+  background-size: 150% 150%; /* Tightens the gradient around the text */
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* For Firefox */
+  color: transparent;
+}

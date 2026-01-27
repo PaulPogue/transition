@@ -1,0 +1,25 @@
+---
+import Header from '../components/Header/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Paul Pogue, CPA</title>
+  </head>
+  <body
+    class="flex flex-col min-h-screen relative overflow-y-scroll text-white bg-astro-build-hero"
+    <main
+    class="flex-1"
+  >
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>

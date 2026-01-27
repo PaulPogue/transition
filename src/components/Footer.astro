@@ -1,0 +1,72 @@
+---
+import { Image } from 'astro:assets';
+import Copyright from './Copyright';
+import AICPALogo from '../assets/images/aicpa.png';
+import KYCPALogo from '../assets/images/kycpa-logo.svg';
+import { FaLocationDot } from 'react-icons/fa6';
+import { FaPhone } from 'react-icons/fa';
+import { FaFax } from 'react-icons/fa';
+import { FaEnvelope } from 'react-icons/fa';
+---
+
+<footer
+  class="bg-gradient-to-t from-black to-transparent text-gray-300 p-4 pt-20 z-100"
+>
+  <div class="container mx-auto">
+    <div class="grid grid-cols-4 text-center mt-10">
+      <!-- grid-col-1: Memberships -->
+      <div class="col-span-2 w-full max-w-3xl mx-auto">
+        <div class="text-center">
+          <h1 class="text-2xl font-bold">Memberships</h1>
+
+          <!-- Two membership cards -->
+          <div class="grid grid-cols-2 gap-8 mt-4 justify-items-center">
+            <div class="flex flex-col items-center">
+              <Image src={AICPALogo} alt="AICPA Logo" height="50" />
+              <p class="text-md font-medium mt-2">
+                American Institute of Certified Public Accountants
+              </p>
+            </div>
+            <div class="flex flex-col items-center">
+              <Image src={KYCPALogo} alt="KYCPA Logo" height="50" />
+              <p class="text-md font-medium mt-2">
+                Kentucky Society of Certified Public Accountants
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- grid-col-2: Contact -->
+      <div class="w-full max-w-3xl mx-auto flex justify-center items-start">
+        <div class="grid grid-cols-[auto_1fr] gap-4 items-start text-left">
+          <h1 class="text-2xl font-bold col-start-2">Contact</h1>
+          <FaPhone className="w-4 h-4 mt-1" />
+          <a href="tel:+2704182200">
+            <p class="text-md font-medium">270 418 2200</p>
+          </a>
+          <FaFax className="w-4 h-4 mt-1" />
+          <p class="text-md font-medium">270 418 2201</p>
+          <FaEnvelope className="w-4 h-4 mt-1" />
+          <a href="/contact">
+            <p class="text-md font-medium">Contact Me</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- grid-col-3: Address (Top-Aligned) -->
+      <div class="w-full max-w-3xl mx-auto flex justify-center items-start">
+        <div class="grid grid-cols-[auto_1fr] gap-4 items-start text-left">
+          <h1 class="text-2xl font-bold col-start-2">Address</h1>
+          <FaLocationDot className="w-4 h-4 mt-1" />
+          <div>
+            <p class="text-md font-medium">Paul Pogue CPA PLLC</p>
+            <p>PO Box 626</p>
+            <p>Powderly, KY 42367</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <Copyright />
+</footer>

@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { BiSolidError } from 'react-icons/bi';
+---
+
+<Layout>
+  <div
+    class="w-full max-w-3xl mx-auto bg-white/15 shadow-xl px-10 py-15 mt-5 rounded-lg"
+  >
+    <div class="text-center text-white mx-auto">
+      <h1 class="text-4xl font-bold">404 - No page found</h1>
+      <BiSolidError size={75} color="yellow" className="mx-auto my-5" />
+      <p class="mt-4 text-lg font-light">
+        Oops! The page you're looking for doesn't exist.
+      </p>
+      <p class="mt-2 font-light">It might have been moved or deleted.</p>
+      <div class="mt-6 text-center flex justify-center">
+        <a href="/">
+          <button
+            type="button"
+            class="flex items-center whitespace-nowrap opacity-70 hover:opacity-100 bg-none text-white border-1 ring ring-white hover:ring-offset-.5 font-medium rounded-lg text-sm px-5 py-2 text-center me-2 cursor-pointer"
+          >
+            Go Back Home
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>

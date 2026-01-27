@@ -1,0 +1,29 @@
+---
+import { Image } from 'astro:assets';
+import MainMenu from './MainMenu';
+import LogoWhite from '../../assets/logos/logo-white.png';
+
+import ClientPortalButton from '../buttons/ClientPortalButton.astro';
+import ScheduleButton from '../buttons/ScheduleButton.astro';
+---
+
+<!-- Main Header Div -->
+<div
+  class="container mx-auto flex justify-between items-center p-10 font-light"
+>
+  <!-- Logo as Link -->
+  <div class="flex items-center">
+    <a href="/" aria-label="Home">
+      <Image src={LogoWhite} alt="Logo" height="50" />
+    </a>
+  </div>
+
+  <!-- Main Menu and Buttons -->
+  <div class="flex items-center text-gray-200 text-md">
+    <span>
+      <MainMenu client:load />
+    </span>
+    <ScheduleButton />
+    <ClientPortalButton />
+  </div>
+</div>
