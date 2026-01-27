@@ -10,6 +10,14 @@
 
 /* 3. YOUR CSS CUSTOM PROPERTIES (VARIABLES) - MUST BE HERE OR EARLIER */
 :root {
+  --firmBlue: #0d47a1;
+  --firmDark: #444444;
+  --firmMidGray: #909090;
+  --firmText: #333333;
+  /* Neutrals */
+  --firmBorder: #e5e7eb;
+  --firmBg: #ffffff;
+
   --main-theme-color: #020345;
   --blue-accent: rgba(0, 123, 255, 0.7);
   --purple-accent: #4b0cfb;
@@ -18,7 +26,7 @@
   --astro-glow-pink: #ff00c1; /* A vibrant pink/magenta */
   --astro-glow-blue: #0077ff; /* A vibrant blue */
   --astro-glow-purple: #7b00ff; /* A vibrant purple */
-  --astro-dark-blue-base: #0b001f; /* A dark, subtle blue/purple base for linear */
+  --astro-dark-blue-base: #0b001f; /*A dark, subtle blue/purple base for linear*/
 }
 
 /* 4. Tailwind Directives (implicitly handled by @import "tailwindcss" in v4, but good to know) */
@@ -31,6 +39,8 @@
 /* 5. Your custom CSS that might use @apply or just regular CSS */
 body {
   font-family: "Mona Sans", sans-serif;
+  color: #1f2937; /* Tailwind gray-800 */
+  background-color: #ffffff;
 }
 
 .container {
@@ -42,68 +52,28 @@ body {
   font-family: "Hubot Sans", sans-serif;
 }
 
-/* Your existing custom radial gradient class (this should work fine) */
-.bg-radial-gradient {
-  background: radial-gradient(
-    circle,
-    var(--purple-accent) 0%,
-    var(--main-theme-color) 100%
-  );
+/* Base site background for transition / conservative layout */
+.bg-site-base {
+  background-color: #ffffff;
 }
 
-/* Cosmic Glow - Subtle, diffused accents on a dark base */
-.bg-stacked-cosmic-glow {
-  background:
-    radial-gradient(
-      circle at top right,
-      var(--pink-accent) 0%,
-      transparent 60%
-    ),
-    radial-gradient(
-      circle at bottom left,
-      var(--purple-accent) 0%,
-      transparent 60%
-    ),
-    linear-gradient(
-      to bottom right,
-      var(--main-theme-color),
-      color-mix(in srgb, var(--main-theme-color) 70%, var(--blue-accent) 30%)
-    ); /* Added a slight blue mix to main theme for subtle variation */
-  background-size: cover; /* Ensure it covers the whole area */
-  background-position: center;
-}
-
-/* --- Astro.build Inspired Gradient --- */
 .bg-astro-build-hero {
-  /* Layer 1: Top-right pink radial glow */
   background-image:
     radial-gradient(
-      circle at 100% 0%,
-      /* Top-right corner */ var(--purple-accent) 0%,
-      transparent 50% /* Controls how far the glow spreads */
+      circle at 85% 20%,
+      rgba(13, 71, 161, 0.45),
+      /* firmBlue glow */ transparent 55%
     ),
-    /* Layer 2: Bottom-left blue radial glow */
-      radial-gradient(
-        circle at 0% 100%,
-        /* Bottom-left corner */ var(--main-theme-color) 0%,
-        transparent 50%
-      ),
-    /* Layer 3: Central purple radial glow (slightly off-center for depth) */
-      radial-gradient(
-        circle at 50% 50%,
-        /* Center */ var(--astro-glow-purple) 0%,
-        transparent 70% /* Softer, broader spread */
-      ),
-    /* Layer 4: Deep background linear gradient for overall depth */
-      linear-gradient(
-        to bottom right,
-        /* Subtle diagonal base */ var(--astro-dark-blue-base),
-        var(--astro-bg-dark)
-      );
+    radial-gradient(circle at 20% 80%, rgba(13, 71, 161, 0.3), transparent 60%),
+    linear-gradient(
+      to bottom right,
+      #0d47a1,
+      /* firmBlue */ #0b3f8f /* darker firm blue, NOT black */
+    );
 
-  background-size: cover; /* Ensures the background covers the entire element */
-  background-position: center; /* Centers the background */
-  background-repeat: no-repeat; /* Prevents repetition if the element is larger */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .text-gradient-astro {

@@ -63,9 +63,9 @@ export default function HeroSignup() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-8 flex justify-center relative z-20"
+      className="mt-8 pl-5 flex justify-left relative z-20"
     >
-      <div className="flex w-full max-w-xl bg-white border border-white rounded-md overflow-hidden">
+      <div className="flex w-full max-w-xl bg-white border border-gray-900 rounded-md overflow-hidden">
         <input
           type="email"
           name="email"
@@ -76,9 +76,9 @@ export default function HeroSignup() {
         />
         <button
           type="submit"
-          className="px-16 py-3 m-1 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-md"
+          className="px-16 py-3 m-1 bg-[var(--firmBlue)] hover:bg-[color-mix(in_srgb,var(--firmBlue),black_15%)] text-white font-semibold rounded-md"
         >
-          Let’s Talk
+          Let's Talk
         </button>
       </div>
     </form>

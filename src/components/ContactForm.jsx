@@ -43,7 +43,7 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={onSubmit} className="space-y-6 w-full">
-      <h2 className="flex justify-center items-center text-3xl text-white font-bold mb-6">
+      <h2 className="flex justify-center items-center text-3xl  font-bold mb-6">
         <FaEnvelope className="w-8 h-8 mr-3" />
         Send a Message
       </h2>

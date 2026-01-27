@@ -11,15 +11,16 @@ import '../styles/global.css';
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>Paul Pogue, CPA</title>
+    <title>Sullivan & Curry</title>
   </head>
-  <body
-    class="flex flex-col min-h-screen relative overflow-y-scroll text-white bg-astro-build-hero"
-    <main
-    class="flex-1"
-  >
+
+  <body class="min-h-screen flex flex-col bg-site-base text-black">
     <Header />
-    <slot />
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
     <Footer />
   </body>
 </html>
