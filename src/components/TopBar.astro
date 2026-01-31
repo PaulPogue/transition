@@ -1,0 +1,29 @@
+---
+import { FaPhone } from 'react-icons/fa';
+import { FaEnvelope } from 'react-icons/fa';
+---
+
+<div class="w-full bg-[var(--firmDarkerBlue)] text-white text-sm">
+  <div class="container mx-auto flex items-center justify-between px-6 py-2">
+    <!-- Left side (empty for now) -->
+    <div></div>
+
+    <!-- Right side -->
+    <div class="flex items-center gap-6">
+      <!-- Email group -->
+      <a
+        href="mailto:info@sullivancurry.com"
+        class="flex items-center gap-2 hover:underline"
+      >
+        <FaEnvelope className="w-4 h-4" />
+        <span class="text-md font-medium"> info@sullivancurry.com </span>
+      </a>
+
+      <!-- Phone group -->
+      <a href="tel:12703389290" class="flex items-center gap-2 hover:underline">
+        <FaPhone className="w-4 h-4" />
+        <span class="text-md font-medium"> 270&nbsp;338&nbsp;9290 </span>
+      </a>
+    </div>
+  </div>
+</div>

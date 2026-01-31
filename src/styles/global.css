@@ -10,6 +10,8 @@
 
 /* 3. YOUR CSS CUSTOM PROPERTIES (VARIABLES) - MUST BE HERE OR EARLIER */
 :root {
+  --firmDarkerBlue: #01094a;
+  --firmDarkBlue: #010e71;
   --firmBlue: #0d47a1;
   --firmDark: #444444;
   --firmMidGray: #909090;
@@ -118,4 +120,22 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text; /* For Firefox */
   color: transparent;
+}
+
+.bg-gradient {
+  background:
+    radial-gradient(
+      circle at center,
+      #1f66e0 0%,
+      /* brighter blue center */ transparent 55%
+    ),
+    linear-gradient(
+      to bottom,
+      #165acb 0%,
+      /* upper blue */ #0d47a1 55%,
+      /* firmBlue */ #0b3f8f 100% /* darker base */
+    );
+
+  background-repeat: no-repeat;
+  background-size: cover;
 }

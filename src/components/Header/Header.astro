@@ -1,29 +1,32 @@
 ---
 import { Image } from 'astro:assets';
 import MainMenu from './MainMenu';
-import Logo from '../../assets/logos/SullivanCurryGray.png';
+import Logo from '../../assets/logos/SullivanCurryWhite.png';
 
 import ClientPortalButton from '../buttons/ClientPortalButton.astro';
 import ScheduleButton from '../buttons/ScheduleButton.astro';
 ---
 
-<!-- Main Header Div -->
-<div
-  class="container mx-auto flex justify-between items-center p-10 font-light text-xl"
->
-  <!-- Logo as Link -->
-  <div class="flex items-center">
-    <a href="/" aria-label="Home">
-      <Image src={Logo} alt="Logo" height="70" />
-    </a>
-  </div>
+<!-- Full-width background wrapper -->
+<div class="bg-[var(--firmDarkBlue)] w-full">
+  <!-- Constrained content -->
+  <div
+    class="container mx-auto flex justify-between items-center p-10 font-light text-xl"
+  >
+    <!-- Logo -->
+    <div class="flex items-center">
+      <a href="/" aria-label="Home">
+        <Image src={Logo} alt="Logo" height="70" />
+      </a>
+    </div>
 
-  <!-- Main Menu and Buttons -->
-  <div class="flex items-center text-gray-900 text-md">
-    <span>
-      <MainMenu client:load />
-    </span>
+    <!-- Menu + CTA -->
+    <div class="flex items-center text-white text-md">
+      <span>
+        <MainMenu client:load />
+      </span>
 
-    <ClientPortalButton />
+      <ClientPortalButton />
+    </div>
   </div>
 </div>
