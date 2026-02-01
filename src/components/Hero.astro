@@ -1,14 +1,16 @@
 ---
+const { class: className = '' } = Astro.props;
 import { Image } from 'astro:assets';
 import GraphicOnly from '../assets/logos/graphic-only.png';
 import CourthouseExterior from '../assets/images/CourthouseExterior.jpg';
 import HeroSignup from './buttons/HeroSignup.jsx';
 import LearnMore from './buttons/LearnMore.astro';
-import PayrollImage from '../assets/images/payroll.jpg';
+import PayrollImage from '../assets/images/w2.png';
+import TaxImage from '../assets/images/tax.png';
 ---
 
 <section
-  class="relative w-full overflow-hidden bg-cover bg-center min-h-[520px] py-10"
+  class={`relative w-full h-full overflow-hidden bg-cover bg-center flex flex-col justify-center py-12 ${className}`}
   style={`background-image: url('${CourthouseExterior.src}');`}
 >
   <!-- Overlay (behind content) -->
@@ -16,20 +18,30 @@ import PayrollImage from '../assets/images/payroll.jpg';
 
   <!-- Content (above overlay) -->
   <div class="container relative z-10 mb-10">
-    <h2 class="text-7xl font-bold tracking-tight text-center text-white mb-10">
-      Modern technology is changing small business accounting
+    <h2 class="text-5xl font-extrabold tracking-tight text-center mb-1">
+      <span class="text-[#EAAA00] mr-10">Experience.</span>
+      <span class="text-[var(--firmDarkBlue)] italic">Tradition.</span>
     </h2>
+
+    <h2 class="text-6xl font-semibold tracking-tight text-center
+         pb-20">
+      <span class="text-gradient-headline">Embracing New Opportunities</span>
+    </h2>
+
     <div class="hero-cards">
       <!-- Accounting -->
       <div class="card bg-gradient">
         <h3 class="text-md text-left text-white mb-4">Small Business</h3>
-        <h2 class="text-3xl font-bold text-left text-white">Accounting</h2>
-
-        <p class="text-gray-200 text-xl my-4 text-left">
-          These tools allow owners to make more informed decisions based on
-          real-time data. I help small business owners adapt to these changes,
-          and leverage them to their advantage.
-        </p>
+        <h2 class="text-3xl font-bold text-left text-white text-shadow">
+          Accounting
+        </h2>
+        <div class="card-text">
+          <p class="text-gray-200 text-xl my-10 text-left text-shadow">
+            These tools allow owners to make more informed decisions based on
+            real-time data. I help small business owners adapt to these changes,
+            and leverage them to their advantage.
+          </p>
+        </div>
 
         <div class="mt-4">
           <LearnMore
@@ -37,19 +49,23 @@ import PayrollImage from '../assets/images/payroll.jpg';
             buttonClass="bg-white text-[var(--firmBlue)]"
           />
         </div>
+        <div class="card-stat">30+ yrs</div>
       </div>
 
       <!-- Tax -->
-      <div class="card bg-[#ebf1ff]">
+      <div class="card bg-[#ebf1ff] card--with-image">
         <h3 class="text-md text-left text-[var(--firmBlue)] mb-4">
           Small Business & Individual
         </h3>
         <h2 class="text-3xl font-bold text-left text-[var(--firmBlue)]">Tax</h2>
-        <p class="text-[var(--firmBlue)] text-xl my-4 text-left">
-          These tools allow owners to make more informed decisions based on
-          real-time data. I help small business owners adapt to these changes,
-          and leverage them to their advantage.
-        </p>
+
+        <div class="card-text">
+          <p class="text-[var(--firmBlue)] text-xl my-10 text-left">
+            These tools allow owners to make more informed decisions based on
+            real-time data. I help small business owners adapt to these changes,
+            and leverage them to their advantage.
+          </p>
+        </div>
 
         <div class="mt-4">
           <LearnMore
@@ -57,19 +73,25 @@ import PayrollImage from '../assets/images/payroll.jpg';
             buttonClass="bg-[var(--firmBlue)] text-white"
           />
         </div>
+        <!-- Image -->
+        <div class="card-media">
+          <img src={TaxImage.src} alt="Payroll" loading="lazy" />
+        </div>
       </div>
 
       <!-- Payroll -->
       <div class="card bg-gray-900 card--with-image">
         <h3 class="text-md text-left text-white mb-4">Small Business</h3>
         <h2 class="text-3xl font-bold text-left text-white">Payroll</h2>
+        <div class="card-text">
+          <p class="text-gray-200 text-xl my-10 text-left">
+            Today's software has nearly automated payroll. We help you select
+            and implement a system that fits your specific needs and integrates
+            with your accounting software. For a hands-off experience, we also
+            offer full-service solutions where we handle every detail for you.
+          </p>
+        </div>
 
-        <p class="text-gray-200 text-xl my-4 text-left">
-          Today's software has nearly automated payroll. We help you select and
-          implement a system that fits your specific needs and integrates with
-          your accounting software. For a hands-off experience, we also offer
-          full-service solutions where we handle every detail for you.
-        </p>
         <div class="mt-4">
           <LearnMore href="/contact" buttonClass="bg-white text-black" />
         </div>
