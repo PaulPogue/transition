@@ -50,6 +50,11 @@ body {
   max-width: 1260px; /* Simplified from your 100% then 1260px */
 }
 
+.container-wide {
+  @apply mx-auto px-4;
+  max-width: 1260px;
+}
+
 .font-hubot {
   font-family: "Hubot Sans", sans-serif;
 }
@@ -138,4 +143,10 @@ body {
 
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+@media (min-width: 1280px) {
+  .container-wide {
+    max-width: 1440px;
+  }
 }

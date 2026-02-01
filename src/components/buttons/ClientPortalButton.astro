@@ -4,14 +4,23 @@ import { FaUser } from 'react-icons/fa';
 
 <a
   href="https://sullivancurry.smartvault.com/"
-  className="block"
+  class="block"
   target="_blank"
   rel="noopener noreferrer"
 >
   <button
     type="button"
-    class="flex items-center whitespace-nowrap hover:opacity-70 bg-none border-1 ring ring-white hover:ring-offset-.5 font-medium rounded-lg text-lg px-5 py-2 text-center text-md ml-4 me-2 cursor-pointer"
+    class="flex items-center whitespace-nowrap
+      bg-gradient-to-b from-[var(--firmBlue)] to-[color-mix(in_srgb,var(--firmBlue)_85%,black)]
+      text-white
+      hover:from-[color-mix(in_srgb,var(--firmBlue)_95%,black)]
+      hover:to-[color-mix(in_srgb,var(--firmBlue)_75%,black)]
+      font-medium rounded-lg
+      text-md px-5 py-2
+      ml-8 me-2
+      transition"
   >
-    <FaUser className="mr-2" /> Client Portal
+    <FaUser className="mr-2" />
+    Client Portal
   </button>
 </a>
