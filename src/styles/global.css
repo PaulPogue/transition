@@ -13,6 +13,7 @@
   --firmDarkerBlue: #01094a;
   --firmDarkBlue: #010e71;
   --firmBlue: #0d47a1;
+  --firmLightBlue: #3b82f6;
   --firmDark: #444444;
   --firmMidGray: #909090;
   --firmText: #333333;
@@ -55,6 +56,90 @@ body {
   max-width: 1260px;
 }
 
+.hero-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.card {
+  width: 420px;
+  height: 800px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+}
+
+/* Card with bottom image + fade */
+.card--with-image {
+  position: relative;
+  overflow: hidden;
+
+  /* Reserve space for the image so it doesn't collide with text/button */
+  padding-bottom: 12rem; /* tweak: 10rem–16rem based on card height */
+}
+
+/* Ensure ALL normal content sits above the image */
+.card--with-image > :not(.card-media) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Media pinned to bottom */
+.card--with-image .card-media {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+
+  height: 48%; /* tweak 35–55% */
+  z-index: 1;
+  transform: translateZ(0);
+}
+
+/* Image fills its region */
+.card--with-image .card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  opacity: 0.95;
+  /* transform: translateZ(0) scale(1.04); */
+}
+
+.card--with-image .card-title,
+.card--with-image .card-text,
+.card--with-image .mt-6 {
+  position: relative;
+  z-index: 2;
+}
+
+/* Fade overlay ON TOP of the image */
+.card--with-image .card-media::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -2px; /* KEY: cover the seam */
+  bottom: 0;
+
+  z-index: 2; /* critical: above img */
+
+  /* Stronger fade to match that Comcast look */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.55) 45%,
+    rgba(13, 24, 50, 0.98) 100%
+  );
+}
+
 .font-hubot {
   font-family: "Hubot Sans", sans-serif;
 }
@@ -64,83 +149,17 @@ body {
   background-color: #ffffff;
 }
 
-.bg-astro-build-hero {
-  background-image:
-    radial-gradient(
-      circle at 85% 20%,
-      rgba(13, 71, 161, 0.45),
-      /* firmBlue glow */ transparent 55%
-    ),
-    radial-gradient(circle at 20% 80%, rgba(13, 71, 161, 0.3), transparent 60%),
-    linear-gradient(
-      to bottom right,
-      #0d47a1,
-      /* firmBlue */ #0b3f8f /* darker firm blue, NOT black */
-    );
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.text-gradient-astro {
-  display: inline-block;
-  background: linear-gradient(
-    to right,
-    var(--astro-glow-purple),
-    var(--purple-accent)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text; /* For Firefox */
-  color: transparent;
-}
-
-.text-radial-astro {
-  display: inline-block;
-  background: radial-gradient(
-    circle,
-    var(--pink-accent) 0%,
-    var(--blue-accent) 60%,
-    var(--purple-accent) 70%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text; /* For Firefox */
-  color: transparent;
-}
-
-.text-radial-astro-reverse {
-  display: inline-block;
-  background-image: radial-gradient(
-    circle,
-    var(--pink-accent) 0%,
-    var(--blue-accent) 40%,
-    var(--purple-accent) 100%
-  );
-  background-size: 150% 150%; /* Tightens the gradient around the text */
-  background-position: center;
-  background-repeat: no-repeat;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text; /* For Firefox */
-  color: transparent;
-}
-
 .bg-gradient {
   background:
     radial-gradient(
-      circle at center,
-      #1f66e0 0%,
-      /* brighter blue center */ transparent 55%
+      circle at 55% 35%,
+      #3b82f6 0%,
+      rgba(59, 130, 246, 0.55) 28%,
+      rgba(59, 130, 246, 0.18) 48%,
+      transparent 70%
     ),
-    linear-gradient(
-      to bottom,
-      #165acb 0%,
-      /* upper blue */ #0d47a1 55%,
-      /* firmBlue */ #0b3f8f 100% /* darker base */
-    );
-
+    radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.22) 0%, transparent 60%),
+    linear-gradient(to bottom, #1e66e5 0%, #0d47a1 55%, #082b63 100%);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -148,5 +167,12 @@ body {
 @media (min-width: 1280px) {
   .container-wide {
     max-width: 1440px;
+  }
+}
+
+/* Stack on mobile */
+@media (max-width: 768px) {
+  .card-row {
+    flex-direction: column;
   }
 }

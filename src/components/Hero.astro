@@ -1,35 +1,83 @@
 ---
 import { Image } from 'astro:assets';
 import GraphicOnly from '../assets/logos/graphic-only.png';
+import CourthouseExterior from '../assets/images/CourthouseExterior.jpg';
 import HeroSignup from './buttons/HeroSignup.jsx';
+import LearnMore from './buttons/LearnMore.astro';
+import PayrollImage from '../assets/images/payroll.jpg';
 ---
 
-<div class="container relative mt-10 mb-10 px-10 py-8 bg-gradient rounded-lg">
-  <h1
-    class="text-6xl/20 font-bold tracking-tight pl-5 relative z-20 text-left max-w-4xl text-white"
-  >
-    Modern technology is changing small business accounting
-  </h1>
+<section
+  class="relative w-full overflow-hidden bg-cover bg-center min-h-[520px] py-10"
+  style={`background-image: url('${CourthouseExterior.src}');`}
+>
+  <!-- Overlay (behind content) -->
+  <div class="absolute inset-0 bg-[var(--firmDarkBlue)]/50"></div>
 
-  <div
-    class="text-gray-200 text-2xl font-light mt-5 pl-5 relative z-20 text-left max-w-3xl"
-  >
-    <p>
-      These tools allow owners to make more informed decisions based on
-      real-time data. I help small business owners adapt to these changes, and
-      leverage them to their advantage.
-    </p>
-    <!-- <p>
-      Modern tools are changing the way we work, and the way we run our
-      businesses.
-    </p> -->
+  <!-- Content (above overlay) -->
+  <div class="container relative z-10 mb-10">
+    <h2 class="text-7xl font-bold tracking-tight text-center text-white mb-10">
+      Modern technology is changing small business accounting
+    </h2>
+    <div class="hero-cards">
+      <!-- Accounting -->
+      <div class="card bg-gradient">
+        <h3 class="text-md text-left text-white mb-4">Small Business</h3>
+        <h2 class="text-3xl font-bold text-left text-white">Accounting</h2>
 
-    <!-- <p class="my-5">
-      I help small business owners adapt to these changes, and leverage them to
-      their advantage
-    </p> -->
+        <p class="text-gray-200 text-xl my-4 text-left">
+          These tools allow owners to make more informed decisions based on
+          real-time data. I help small business owners adapt to these changes,
+          and leverage them to their advantage.
+        </p>
 
-    <!-- <p class="my-5">I offer Modern Solutions to Age-Old Problems.</p> -->
+        <div class="mt-4">
+          <LearnMore
+            href="/contact"
+            buttonClass="bg-white text-[var(--firmBlue)]"
+          />
+        </div>
+      </div>
+
+      <!-- Tax -->
+      <div class="card bg-[#ebf1ff]">
+        <h3 class="text-md text-left text-[var(--firmBlue)] mb-4">
+          Small Business & Individual
+        </h3>
+        <h2 class="text-3xl font-bold text-left text-[var(--firmBlue)]">Tax</h2>
+        <p class="text-[var(--firmBlue)] text-xl my-4 text-left">
+          These tools allow owners to make more informed decisions based on
+          real-time data. I help small business owners adapt to these changes,
+          and leverage them to their advantage.
+        </p>
+
+        <div class="mt-4">
+          <LearnMore
+            href="/contact"
+            buttonClass="bg-[var(--firmBlue)] text-white"
+          />
+        </div>
+      </div>
+
+      <!-- Payroll -->
+      <div class="card bg-gray-900 card--with-image">
+        <h3 class="text-md text-left text-white mb-4">Small Business</h3>
+        <h2 class="text-3xl font-bold text-left text-white">Payroll</h2>
+
+        <p class="text-gray-200 text-xl my-4 text-left">
+          Today's software has nearly automated payroll. We help you select and
+          implement a system that fits your specific needs and integrates with
+          your accounting software. For a hands-off experience, we also offer
+          full-service solutions where we handle every detail for you.
+        </p>
+        <div class="mt-4">
+          <LearnMore href="/contact" buttonClass="bg-white text-black" />
+        </div>
+        <!-- Image -->
+        <div class="card-media">
+          <img src={PayrollImage.src} alt="Payroll" loading="lazy" />
+        </div>
+      </div>
+    </div>
   </div>
-  <HeroSignup client:load />
-</div>
+</section>
