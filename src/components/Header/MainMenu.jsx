@@ -31,14 +31,14 @@ const MainMenu = () => {
           <ServicesDropdown />
         </MenuItem> */}
 
-        <MenuItem
+        {/* <MenuItem
           label="Services"
           hasDropdown={true}
           isActive={activeMenu === "Services"}
           onClick={(isOpen) => toggleMenu("Services", isOpen)}
         >
           <ServicesDropdown />
-        </MenuItem>
+        </MenuItem> */}
 
         {/* <MenuItem
           label="Tools"

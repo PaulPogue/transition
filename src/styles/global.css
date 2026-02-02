@@ -67,6 +67,14 @@ body {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 
+.section-header {
+  font-size: 2.5em;
+  font-weight: 600;
+  text-align: center;
+  color: #0d47a1; /* firmBlue */
+  margin-bottom: 2rem;
+}
+
 .hero {
   flex: 1;
   display: flex;
@@ -80,17 +88,45 @@ body {
   gap: 2rem;
 }
 
+.hero-location-credit {
+  /* Using a low-opacity white makes it look "etched" into the background */
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Helps legibility against the sky */
+  pointer-events: none; /* User can't accidentally select it while clicking cards */
+}
+
 .card {
   position: relative;
   width: 420px;
-  height: 700px;
-
+  height: 550px;
   display: flex;
   flex-direction: column;
+  padding: 1.5rem 2rem;
+  border-radius: 1.5rem; /* Restores the rounded corners */
+  overflow: hidden; /* Clips the background image to the corners */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
 
-  padding: 1.5rem;
-  border-radius: 1rem;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+/* This is the "Shelf" that keeps buttons in a row */
+.card-body-content {
+  height: 180px; /* This keeps buttons perfectly aligned regardless of card height */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  z-index: 10; /* Keeps text above the image */
+}
+
+.card-cta-wrapper {
+  margin-top: auto; /* Pushes the button to the bottom of the card-body-content shelf */
+  margin-left: 0;
+  margin-right: auto;
+  width: max-content;
+  display: flex;
+  justify-content: flex-start;
+  z-index: 10;
 }
 
 .card-text {
@@ -143,7 +179,7 @@ body {
 .card--with-image .card-media img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: bottom center; /* 👈 important */
   display: block;
 
@@ -168,14 +204,6 @@ body {
   bottom: 0;
 
   z-index: 2; /* critical: above img */
-
-  /* Stronger fade to match that Comcast look */
-  /* background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.55) 45%,
-    rgba(13, 24, 50, 0.98) 100%
-  ); */
 }
 
 .font-hubot {

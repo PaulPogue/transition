@@ -4,31 +4,26 @@ import MainMenu from './MainMenu';
 import Logo from '../../assets/logos/SullivanCurryWhite.png';
 
 import ClientPortalButton from '../buttons/ClientPortalButton.astro';
-import ScheduleButton from '../buttons/ScheduleButton.astro';
 ---
 
 <!-- Full-width background wrapper -->
-<div class="bg-[var(--firmDarkBlue)] w-full">
+<div class="w-full bg-[color:var(--firmDarkBlue)]">
   <!-- Constrained content -->
   <div
-    class="container-wide mx-auto flex justify-between items-center p-10 font-light text-xl"
+    class="container-wide mx-auto flex items-center justify-between p-10 font-light text-xl"
   >
     <!-- Logo -->
-    <div class="flex items-center">
-      <a href="/" aria-label="Home">
-        <Image src={Logo} alt="Logo" height="70" />
-      </a>
-    </div>
+    <a href="/" aria-label="Home" class="flex items-center">
+      <Image src={Logo} alt="Sullivan & Curry logo" width={280} height={70} />
+    </a>
 
     <!-- Menu + CTA -->
-    <div class="flex items-center text-white text-md">
-      <span>
-        <MainMenu client:load />
-      </span>
-
+    <div class="flex items-center gap-6 text-white text-md">
+      <MainMenu client:load />
       <ClientPortalButton />
     </div>
   </div>
 </div>
-<!-- White divider bar -->
+
+<!-- Divider -->
 <div class="w-full h-1 bg-gray-300"></div>

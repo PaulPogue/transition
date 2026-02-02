@@ -9,96 +9,77 @@ import PayrollImage from '../assets/images/w2.png';
 import TaxImage from '../assets/images/tax.png';
 ---
 
-<section
-  class={`relative w-full h-full overflow-hidden bg-cover bg-center flex flex-col justify-center py-12 ${className}`}
-  style={`background-image: url('${CourthouseExterior.src}');`}
->
-  <!-- Overlay (behind content) -->
-  <div class="absolute inset-0 bg-[var(--firmDarkBlue)]/50"></div>
+<section class="relative overflow-hidden">
+  <!-- Background -->
+  <div class="absolute inset-0">
+    <!-- Courthouse image -->
+    <div
+      class="absolute inset-0 bg-[url('/images/courthouse.jpg')] bg-cover bg-center"
+      style={`background-image: url('${CourthouseExterior.src}');`}
+    >
+    </div>
 
-  <!-- Content (above overlay) -->
-  <div class="container relative z-10 mb-10">
-    <h2 class="text-5xl font-extrabold tracking-tight text-center mb-1">
-      <span class="text-[#EAAA00] mr-10">Experience.</span>
-      <span class="text-[var(--firmDarkBlue)] italic">Tradition.</span>
-    </h2>
+    <!-- Brand color wash -->
+    <div class="absolute inset-0 bg-[var(--firmDarkBlue)]/70"></div>
+    <!-- <div class="absolute inset-0 bg-[var(--blue-900)]/70"></div> -->
 
-    <h2 class="text-6xl font-semibold tracking-tight text-center
-         pb-20">
-      <span class="text-gradient-headline">Embracing New Opportunities</span>
-    </h2>
+    <!-- Gentle gradient for legibility -->
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/30">
+    </div>
+  </div>
 
-    <div class="hero-cards">
-      <!-- Accounting -->
-      <div class="card bg-gradient">
-        <h3 class="text-md text-left text-white mb-4">Small Business</h3>
-        <h2 class="text-3xl font-bold text-left text-white text-shadow">
-          Accounting
-        </h2>
-        <div class="card-text">
-          <p class="text-gray-200 text-xl my-10 text-left text-shadow">
-            These tools allow owners to make more informed decisions based on
-            real-time data. I help small business owners adapt to these changes,
-            and leverage them to their advantage.
-          </p>
-        </div>
+  <div class="relative z-10 mx-auto max-w-6xl px-6 py-20 sm:py-28">
+    <!-- Optional eyebrow -->
+    <p
+      class="text-sm font-semibold tracking-widest text-slate-200/90 uppercase text-center"
+    >
+      Experience you trust • Modern tools that fit
+    </p>
 
-        <div class="mt-4">
-          <LearnMore
-            href="/contact"
-            buttonClass="bg-white text-[var(--firmBlue)]"
-          />
-        </div>
-        <div class="card-stat">30+ yrs</div>
+    <h1
+      class="mt-5 text-center text-white font-bold tracking-tight text-4xl sm:text-6xl leading-tight"
+    >
+      Helping small businesses move forward—without losing what works
+    </h1>
+
+    <p
+      class="mt-6 text-center text-slate-200 text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto"
+    >
+      Modern accounting technology can bring clarity and control, but change
+      shouldn’t be disruptive. We help you adopt better systems and workflows
+      while respecting the traditions that make your business run.
+    </p>
+
+    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        href="/contact"
+        class="inline-flex items-center justify-center rounded-xl bg-white text-slate-900 px-6 py-3 font-semibold shadow-sm hover:bg-slate-100 transition"
+      >
+        Schedule a Consultation
+      </a>
+
+      <a
+        href="/services"
+        class="inline-flex items-center justify-center rounded-xl border border-white/30 text-white px-6 py-3 font-semibold hover:bg-white/10 transition"
+      >
+        Explore Services
+      </a>
+    </div>
+
+    <div
+      class="mt-10 flex flex-col sm:flex-row gap-6 justify-center items-center text-slate-200/90 text-sm"
+    >
+      <div class="flex items-center gap-2">
+        <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+        <span>Small business specialists</span>
       </div>
-
-      <!-- Tax -->
-      <div class="card bg-[#ebf1ff] card--with-image">
-        <h3 class="text-md text-left text-[var(--firmBlue)] mb-4">
-          Small Business & Individual
-        </h3>
-        <h2 class="text-3xl font-bold text-left text-[var(--firmBlue)]">Tax</h2>
-
-        <div class="card-text">
-          <p class="text-[var(--firmBlue)] text-xl my-10 text-left">
-            These tools allow owners to make more informed decisions based on
-            real-time data. I help small business owners adapt to these changes,
-            and leverage them to their advantage.
-          </p>
-        </div>
-
-        <div class="mt-4">
-          <LearnMore
-            href="/contact"
-            buttonClass="bg-[var(--firmBlue)] text-white"
-          />
-        </div>
-        <!-- Image -->
-        <div class="card-media">
-          <img src={TaxImage.src} alt="Payroll" loading="lazy" />
-        </div>
+      <div class="flex items-center gap-2">
+        <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+        <span>Tax + accounting + payroll support</span>
       </div>
-
-      <!-- Payroll -->
-      <div class="card bg-gray-900 card--with-image">
-        <h3 class="text-md text-left text-white mb-4">Small Business</h3>
-        <h2 class="text-3xl font-bold text-left text-white">Payroll</h2>
-        <div class="card-text">
-          <p class="text-gray-200 text-xl my-10 text-left">
-            Today's software has nearly automated payroll. We help you select
-            and implement a system that fits your specific needs and integrates
-            with your accounting software. For a hands-off experience, we also
-            offer full-service solutions where we handle every detail for you.
-          </p>
-        </div>
-
-        <div class="mt-4">
-          <LearnMore href="/contact" buttonClass="bg-white text-black" />
-        </div>
-        <!-- Image -->
-        <div class="card-media">
-          <img src={PayrollImage.src} alt="Payroll" loading="lazy" />
-        </div>
+      <div class="flex items-center gap-2">
+        <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+        <span>Secure client portal</span>
       </div>
     </div>
   </div>
