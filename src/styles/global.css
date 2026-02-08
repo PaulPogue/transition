@@ -68,8 +68,10 @@ body {
 }
 
 .section-header {
-  font-size: 2.5em;
-  font-weight: 600;
+  font-size: clamp(2.25rem, 4vw, 3rem); /* matches text-4xl → text-5xl */
+  font-weight: 600; /* font-bold */
+  line-height: 1.1; /* leading-tight */
+  letter-spacing: -0.025em; /* tracking-tight */
   text-align: center;
   color: #0d47a1; /* firmBlue */
   margin-bottom: 2rem;
@@ -229,27 +231,27 @@ body {
 
 .bg-gradient {
   background:
-    /* Focused highlight — smaller & centered */
+    /* Focused highlight — softened */
     radial-gradient(
       circle at 50% 42%,
-      rgba(96, 165, 250, 0.85) 0%,
-      rgba(59, 130, 246, 0.65) 18%,
-      rgba(32, 111, 243, 0.35) 34%,
-      transparent 52%
+      rgba(96, 165, 250, 0.65) 0%,
+      rgba(59, 130, 246, 0.55) 20%,
+      rgba(32, 111, 243, 0.3) 36%,
+      transparent 54%
     ),
-    /* Subtle depth — still blue, not black */
+    /* Subtle depth */
       radial-gradient(
         circle at 50% 75%,
         rgba(4, 38, 159, 0.45) 0%,
         transparent 60%
       ),
-    /* Core gradient — darker top & bottom */
+    /* Core gradient */
       linear-gradient(
         to bottom,
         #1b5fe0 0%,
-        /* slightly darker than 206ff3 */ #144fb8 38%,
+        #144fb8 38%,
         #0b3f8f 70%,
-        #031f7a 100% /* darker than 04269f, still blue */
+        #031f7a 100%
       );
 
   background-repeat: no-repeat;
