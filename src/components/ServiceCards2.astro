@@ -7,15 +7,12 @@ import HeroSignup from './buttons/HeroSignup.jsx';
 import LearnMore from './buttons/LearnMore.astro';
 import PayrollImage from '../assets/images/w2.png';
 import TaxImage from '../assets/images/tax.png';
-import ThirtyImage from '../assets/images/30.png';
 ---
 
 <section
   class={`relative w-full h-full overflow-hidden bg-cover bg-center flex flex-col justify-center py-12 ${className}`}
 >
-  <div class="section-header py-6">
-    Find the right solution for your business
-  </div>
+  <div class="section-header">Find the right solution for your business</div>
   <!-- Content (above overlay) -->
   <div class="container relative z-10 mb-">
     <h2 class="text-5xl font-extrabold tracking-tight text-center mb-1">
@@ -32,10 +29,8 @@ import ThirtyImage from '../assets/images/30.png';
             <p
               class="text-gray-200 font-medium text-lg my-2 text-left text-shadow"
             >
-              Small business is our specialty. Whether you need help getting
-              started, monthly bookkeeping, periodic financial review, or
-              comprehensive accounting support, we provide the clarity and
-              insight you need to make confident business decisions.
+              Small business is our specialty. Whether you help getting started,
+              periodic review or full service we have options for you.
             </p>
           </div>
 
@@ -45,11 +40,7 @@ import ThirtyImage from '../assets/images/30.png';
               buttonClass="bg-white text-[var(--firmBlue)]"
             />
           </div>
-
-          <!-- Image -->
-          <div class="card-thirty">
-            <img src={ThirtyImage.src} alt="Experience" loading="lazy" />
-          </div>
+          <div class="card-stat">30+ yrs</div>
         </div>
 
         <!-- Tax -->
@@ -70,8 +61,8 @@ import ThirtyImage from '../assets/images/30.png';
               We provide precise and efficient tax preparation for individuals
               and business entities, with careful attention to detail and
               long-term planning. Whether you’re self-employed or operating a
-              complex organization, or filing personal returns, we ensure your
-              returns are filed correctly and strategically.
+              complex organization, we ensure your returns are filed correctly
+              and strategically.
             </p>
           </div>
 

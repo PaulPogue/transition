@@ -100,7 +100,7 @@ body {
 .card {
   position: relative;
   width: 420px;
-  height: 550px;
+  height: 600px;
   display: flex;
   flex-direction: column;
   padding: 1.5rem 2rem;
@@ -111,7 +111,7 @@ body {
 
 /* This is the "Shelf" that keeps buttons in a row */
 .card-body-content {
-  height: 180px; /* This keeps buttons perfectly aligned regardless of card height */
+  height: 200px; /* This keeps buttons perfectly aligned regardless of card height */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -120,7 +120,7 @@ body {
 }
 
 .card-cta-wrapper {
-  margin-top: auto; /* Pushes the button to the bottom of the card-body-content shelf */
+  margin-top: auto;
   margin-left: 0;
   margin-right: auto;
   width: max-content;
@@ -206,6 +206,18 @@ body {
   z-index: 2; /* critical: above img */
 }
 
+.card-thirty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto; /* This pushes it to the bottom if you want */
+}
+
+.card-thirty img {
+  max-width: 200px; /* Adjust size as needed */
+  height: auto;
+}
+
 .font-hubot {
   font-family: "Hubot Sans", sans-serif;
 }
@@ -247,6 +259,13 @@ body {
 @media (min-width: 1280px) {
   .container-wide {
     max-width: 1440px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-bg {
+    background-size: 120% auto;
+    background-position: 58% 38%;
   }
 }
 

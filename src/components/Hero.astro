@@ -9,77 +9,108 @@ import PayrollImage from '../assets/images/w2.png';
 import TaxImage from '../assets/images/tax.png';
 ---
 
-<section class="relative overflow-hidden">
-  <!-- Background -->
-  <div class="absolute inset-0">
-    <!-- Courthouse image -->
+<section
+  class="relative overflow-hidden min-h-[560px] md:min-h-[720px] lg:min-h-[820px]"
+>
+  <!-- Background layers (desktop only) -->
+  <div class="absolute inset-0 hidden md:block">
+    <!-- Background image -->
     <div
-      class="absolute inset-0 bg-[url('/images/courthouse.jpg')] bg-cover bg-center"
-      style={`background-image: url('${CourthouseExterior.src}');`}
+      class="absolute inset-0 bg-no-repeat"
+      style={`background-image: url('${CourthouseExterior.src}');
+            background-size: 105% auto;
+            background-position: 75% 40%;`}
     >
     </div>
 
     <!-- Brand color wash -->
-    <div class="absolute inset-0 bg-[var(--firmDarkBlue)]/70"></div>
-    <!-- <div class="absolute inset-0 bg-[var(--blue-900)]/70"></div> -->
+    <div class="absolute inset-0 bg-[var(--firmDarkBlue)]/60"></div>
 
-    <!-- Gentle gradient for legibility -->
+    <!-- Gradient for legibility -->
     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/30">
+    </div>
+    <!-- Photo credit -->
+    <div
+      class="absolute bottom-4 left-6 text-[11px] tracking-widest uppercase
+           text-white/50 select-none pointer-events-none"
+    >
+      Muhlenberg County Courthouse • Greenville, KY
     </div>
   </div>
 
-  <div class="relative z-10 mx-auto max-w-6xl px-6 py-20 sm:py-28">
-    <!-- Optional eyebrow -->
-    <p
-      class="text-sm font-semibold tracking-widest text-slate-200/90 uppercase text-center"
-    >
-      Experience you trust • Modern tools that fit
-    </p>
-
-    <h1
-      class="mt-5 text-center text-white font-bold tracking-tight text-4xl sm:text-6xl leading-tight"
-    >
-      Helping small businesses move forward—without losing what works
-    </h1>
-
-    <p
-      class="mt-6 text-center text-slate-200 text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto"
-    >
-      Modern accounting technology can bring clarity and control, but change
-      shouldn’t be disruptive. We help you adopt better systems and workflows
-      while respecting the traditions that make your business run.
-    </p>
-
-    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-      <a
-        href="/contact"
-        class="inline-flex items-center justify-center rounded-xl bg-white text-slate-900 px-6 py-3 font-semibold shadow-sm hover:bg-slate-100 transition"
-      >
-        Schedule a Consultation
-      </a>
-
-      <a
-        href="/services"
-        class="inline-flex items-center justify-center rounded-xl border border-white/30 text-white px-6 py-3 font-semibold hover:bg-white/10 transition"
-      >
-        Explore Services
-      </a>
-    </div>
-
-    <div
-      class="mt-10 flex flex-col sm:flex-row gap-6 justify-center items-center text-slate-200/90 text-sm"
-    >
-      <div class="flex items-center gap-2">
-        <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
-        <span>Small business specialists</span>
+  <!-- Content (fills hero height & centers vertically) -->
+  <div
+    class="relative z-10 min-h-[560px] md:min-h-[640px] lg:min-h-[720px] flex items-center"
+  >
+    <div class="w-full">
+      <!-- Headline -->
+      <div class="mx-auto max-w-5xl px-6 text-center mb-24">
+        <h1
+          class="font-bold tracking-tight text-4xl sm:text-5xl leading-tight
+   text-slate-900 md:text-white"
+        >
+          Rooted in Tradition.<br /><span class="md:text-white/90"
+            >Experience You Trust.</span
+          ><br />
+          <span
+            class="italic text-slate-700 md:text-transparent md:bg-clip-text md:bg-gradient-to-r md:from-cyan-300 md:to-sky-300"
+          >
+            Innovating for a Better Tomorrow.
+          </span>
+        </h1>
       </div>
-      <div class="flex items-center gap-2">
-        <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
-        <span>Tax + accounting + payroll support</span>
-      </div>
-      <div class="flex items-center gap-2">
-        <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
-        <span>Secure client portal</span>
+
+      <!-- Card -->
+      <div class="mx-auto max-w-3xl px-6">
+        <div class="bg-gradient rounded-3xl px-8 py-6 text-center shadow-xl">
+          <!-- <p
+            class="text-sm font-semibold tracking-widest text-slate-200/90 uppercase"
+          >
+            Experience You Trust
+          </p> -->
+
+          <p class="text-slate-200 text-lg leading-relaxed">
+            Modern accounting technology can bring clarity and control, but
+            change shouldn’t be disruptive. We help small businesses adopt
+            better systems and workflows while respecting the traditions that
+            make your business run.
+          </p>
+
+          <!-- CTAs -->
+          <!-- <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/contact"
+              class="inline-flex items-center justify-center rounded-xl bg-white text-slate-900 px-6 py-3 font-semibold shadow hover:bg-slate-100 transition"
+            >
+              Schedule a Consultation
+            </a>
+
+            <a
+              href="/services"
+              class="inline-flex items-center justify-center rounded-xl border border-white/30 text-white px-6 py-3 font-semibold hover:bg-white/10 transition"
+            >
+              Explore Services
+            </a>
+          </div> -->
+
+          <!-- Feature row -->
+          <div
+            class="mt-8 mx-auto flex flex-col sm:flex-row gap-6 justify-center items-center text-slate-200/90 text-sm"
+          >
+            <div class="flex items-center gap-2">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+              <span>Small business specialists</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+              <span>Tax + accounting + payroll support</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+              <span>Secure client portal</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
