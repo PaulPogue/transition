@@ -43,9 +43,13 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={onSubmit} className="space-y-6 w-full">
-      <h2 className="flex justify-center items-center text-3xl  font-bold mb-6">
-        <FaEnvelope className="w-8 h-8 mr-3" />
-        Send a Message
+      <h2
+        className="font-bold tracking-tight text-3xl sm:text-4xl text-center leading-tight
+   text-slate-900 md:text-white"
+      >
+        Send us a message
+        <br />
+        We'll be in touch
       </h2>
 
       <div>
@@ -90,17 +94,32 @@ const ContactForm = () => {
           name="message"
           className="w-full p-3 border rounded bg-white text-black"
           placeholder="* What would you like to talk about?"
-          rows="5"
+          rows="10"
         ></textarea>
       </div>
 
       <div className="text-center">
         <button
           type="submit"
-          className="inline-flex whitespace-nowrap hover:opacity-70 bg-none text-gray-200 border-1 ring ring-white hover:ring-offset-.5 font-medium rounded-lg text-lg px-5 py-2 text-center me-2"
+          className="flex
+      items-center
+      justify-center
+      mx-auto
+      whitespace-nowrap
+      cursor-pointer
+      rounded-lg 
+      px-5 py-2 
+      font-normal
+      text-lg
+      bg-[#ebf1ff] text-[var(--firmBlue)]
+      transition-all duration-200 ease-out
+      hover:-translate-y-0.5
+      hover:shadow-lg
+      focus:outline-none
+      focus-visible:ring-2 focus-visible:ring-white/60"
         >
           <FaPaperPlane className="mr-2 mt-1" />
-          Send Message
+          Send
         </button>
       </div>
     </form>

@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ScheduleButtonLarge from '../components/buttons/ScheduleButtonLarge.astro';
+import BroadStreet from '../assets/images/BroadStreet.png';
 import ContactForm from '../components/ContactForm';
 import { FaLocationDot } from 'react-icons/fa6';
 import { FaPhone } from 'react-icons/fa';
@@ -8,62 +9,45 @@ import { FaFax } from 'react-icons/fa';
 ---
 
 <Layout>
-  <!-- Contact Info Section -->
-
-  <div
-    class="w-full max-w-3xl mx-auto px-10 py-5 mt-15 rounded-lg drop-shadow-[0_0_40px_var(--blue-accent)]"
-  >
-    <h1 class="text-3xl font-bold text-center mb-6">Contact</h1>
-
-    <div class="center flex justify-center items-center bg-white rounded-lg">
+  <!-- Contact Section -->
+  <section class="relative w-full py-24">
+    <!-- Background layers (desktop only) -->
+    <div class="absolute inset-0 hidden md:block z-0 pointer-events-none">
+      <!-- Background image -->
       <div
-        class="grid grid-cols-[3fr_1fr_3fr] gap-6 py-5 text-lg text-gray-800 items-center"
+        class="absolute inset-0 bg-cover bg-center"
+        style={`background-image: url('${BroadStreet.src}');`}
       >
-        <!-- Address Section -->
-        <div
-          class="grid grid-cols-[auto_1fr] gap-4 items-start text-left text-[var(--main-color-theme)]"
-        >
-          <FaLocationDot className="w-5 h-5 mt-1" />
+      </div>
+
+      <!-- Brand color wash -->
+      <div class="absolute inset-0 bg-[var(--firmDarkBlue)]/50"></div>
+
+      <!-- Gradient for legibility -->
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-transparent to-black/30"
+      >
+      </div>
+
+      <!-- Photo credit -->
+      <div
+        class="absolute bottom-4 left-6 text-[11px] tracking-widest uppercase
+               text-white/50 select-none"
+      >
+        Broad Street • Central City, KY • CIRCA 1980
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 px-4 sm:px-10 text-white">
+      <div class="max-w-3xl mx-auto">
+        <!-- Horizontal Layout: Contact Info + Form -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           <div>
-            <p class="text-md font-medium">Paul Pogue CPA PLLC</p>
-            <p>PO Box 626</p>
-            <p>Powderly, KY 42367</p>
+            <ContactForm client:load />
           </div>
         </div>
-
-        <!-- Vertical Line -->
-        <div class="flex justify-center items-center h-full">
-          <div class="h-full border-l-2 border-gray-300"></div>
-        </div>
-
-        <!-- Phone Section -->
-        <div
-          class="grid grid-cols-[auto_1fr] gap-4 items-start text-left text-[var(--main-color-theme)]"
-        >
-          <FaPhone className="w-5 h-5 mt-1" />
-          <a href="tel:+2704182200"
-            ><p class="text-md font-medium">270 418 2200</p></a
-          >
-
-          <FaFax className="w-5 h-5 mt-1" />
-          <p class="text-md font-medium">270 418 2201</p>
-        </div>
       </div>
     </div>
-    <hr class="border-t-2 border-white my-12" />
-
-    <!-- Schedule a Call -->
-    <div class="grid grid-cols-2 items-center">
-      <div class="mx-auto text-center text-3xl font-bold">
-        Schedule a Virtual Meeting
-      </div>
-      <div class="mx-auto text-center">
-        <ScheduleButtonLarge />
-      </div>
-    </div>
-
-    <hr class="border-t-2 border-white my-12" />
-
-    <ContactForm client:load />
-  </div>
+  </section>
 </Layout>

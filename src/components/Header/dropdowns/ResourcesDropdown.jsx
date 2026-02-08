@@ -30,7 +30,7 @@ const ResourcesDropdown = () => (
       <li>
         <a
           href="https://www.irs.gov/individuals/tax-withholding-estimator"
-          className="flex items-center gap-4 text-gray-500 hover:bg-gray-100 px-3 py-1"
+          className="flex items-center gap-4 text-gray-500 hover:bg-gray-200 hover:rounded-lg px-3 py-1"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -50,7 +50,7 @@ const ResourcesDropdown = () => (
       <li>
         <a
           href="https://www.irs.gov/payments"
-          className="flex items-center gap-4 text-gray-500 hover:bg-gray-100 px-3 py-1"
+          className="flex items-center gap-4 text-gray-500 hover:bg-gray-200 hover:rounded-lg px-3 py-1"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -63,7 +63,7 @@ const ResourcesDropdown = () => (
       <li>
         <a
           href="https://epayment.ky.gov/epay"
-          className="flex items-center gap-4 text-gray-500 hover:bg-gray-100 px-3 py-1"
+          className="flex items-center gap-4 text-gray-500 hover:bg-gray-200 hover:rounded-lg px-3 py-1"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -81,7 +81,7 @@ const ResourcesDropdown = () => (
       <li>
         <a
           href="https://www.irs.gov/wheres-my-refund"
-          className="flex items-center gap-4 text-gray-500 hover:bg-gray-100 px-3 py-1"
+          className="flex items-center gap-4 text-gray-500 hover:bg-gray-200 hover:rounded-lg px-3 py-1"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -96,7 +96,7 @@ const ResourcesDropdown = () => (
       <li>
         <a
           href="https://refund.ky.gov/"
-          className="flex items-center gap-4 hover:bg-gray-100 px-3 py-1"
+          className="flex items-center gap-4 hover:bg-gray-200 hover:rounded-lg px-3 py-1"
           target="_blank"
           rel="noopener noreferrer"
         >
