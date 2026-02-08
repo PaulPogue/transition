@@ -1,5 +1,12 @@
 ---
 import { FaUser } from 'react-icons/fa';
+
+interface Props {
+  href: string;
+  buttonClass?: string;
+}
+
+const { href, buttonClass = '' } = Astro.props;
 ---
 
 <a
@@ -10,6 +17,30 @@ import { FaUser } from 'react-icons/fa';
 >
   <button
     type="button"
+    class={`
+    flex
+    items-center
+    whitespace-nowrap
+    cursor-pointer
+    rounded-lg 
+    px-5 py-2 
+    font-normal
+    text-lg
+    transition-all duration-200 ease-out
+    hover:-translate-y-0.5
+    hover:shadow-lg
+    focus:outline-none
+    focus-visible:ring-2 focus-visible:ring-white/60
+    ${buttonClass}
+    `}
+  >
+    <FaUser className="mr-2" />
+    CLIENT PORTAL
+  </button>
+</a>
+
+<!-- <button
+    type="button"
     class="flex items-center whitespace-nowrap
       bg-gradient-to-b from-[var(--firmBlue)] to-[color-mix(in_srgb,var(--firmBlue)_85%,black)]
       text-white
@@ -19,8 +50,4 @@ import { FaUser } from 'react-icons/fa';
       text-md px-5 py-2
       ml-8 me-2
       transition"
-  >
-    <FaUser className="mr-2" />
-    Client Portal
-  </button>
-</a>
+  > -->

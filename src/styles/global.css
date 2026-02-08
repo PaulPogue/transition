@@ -231,27 +231,58 @@ body {
 
 .bg-gradient {
   background:
-    /* Focused highlight — softened */
+    /* Focused highlight — quieter + less “glow” */
     radial-gradient(
       circle at 50% 42%,
-      rgba(96, 165, 250, 0.65) 0%,
-      rgba(59, 130, 246, 0.55) 20%,
-      rgba(32, 111, 243, 0.3) 36%,
-      transparent 54%
+      rgba(96, 165, 250, 0.52) 0%,
+      rgba(59, 130, 246, 0.44) 20%,
+      rgba(32, 111, 243, 0.22) 36%,
+      transparent 56%
     ),
-    /* Subtle depth */
+    /* Subtle depth — slightly reduced */
       radial-gradient(
         circle at 50% 75%,
-        rgba(4, 38, 159, 0.45) 0%,
-        transparent 60%
+        rgba(4, 38, 159, 0.34) 0%,
+        transparent 62%
       ),
-    /* Core gradient */
+    /* Core gradient — slightly muted (less electric) */
       linear-gradient(
         to bottom,
-        #1b5fe0 0%,
-        #144fb8 38%,
-        #0b3f8f 70%,
-        #031f7a 100%
+        #2158c8 0%,
+        #184aa9 38%,
+        #0f3f86 70%,
+        #08266a 100%
+      );
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-gradient-reversed {
+  background:
+    /* Inverted highlight — energy pushed outward */
+    radial-gradient(
+      ellipse at 50% 42%,
+      transparent 0%,
+      rgba(32, 111, 243, 0.22) 32%,
+      rgba(59, 130, 246, 0.44) 48%,
+      rgba(96, 165, 250, 0.52) 64%,
+      transparent 82%
+    ),
+    /* Inverted depth — supports edges instead of center */
+      radial-gradient(
+        ellipse at 50% 75%,
+        transparent 0%,
+        rgba(4, 38, 159, 0.34) 55%,
+        transparent 78%
+      ),
+    /* Core gradient unchanged (still vertical structure) */
+      linear-gradient(
+        to bottom,
+        #2158c8 0%,
+        #184aa9 38%,
+        #0f3f86 70%,
+        #08266a 100%
       );
 
   background-repeat: no-repeat;
