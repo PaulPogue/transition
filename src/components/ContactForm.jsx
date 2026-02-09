@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
-import { FaEnvelope } from "react-icons/fa";
 import { FaPaperPlane } from "react-icons/fa";
 
 const ContactForm = () => {
@@ -24,19 +23,39 @@ const ContactForm = () => {
 
     if (res.success) {
       Swal.fire({
-        title: "Message Sent",
-        text: "Thank you, I'll be in touch soon!",
         icon: "success",
-        confirmButtonColor: "#333",
+        title: "Message Sent",
+        html: `<p class="swal2-text">Thank you — we’ll be in touch soon.</p>`,
+        showConfirmButton: true,
+        confirmButtonText: "OK",
+        buttonsStyling: false, // let our classes take over
+        background: "#ffffff",
+        color: "#0f172a", // slate-900
+        iconColor: "var(--firmBlue)",
+        customClass: {
+          popup: "swal2-site-popup",
+          title: "swal2-site-title",
+          htmlContainer: "swal2-site-html",
+          confirmButton: "swal2-site-confirm",
+        },
       }).then(() => {
         window.location.href = "/";
       });
     } else {
       Swal.fire({
+        icon: "error",
         title: "Error",
         text: "Failed to send message. Please try again.",
-        icon: "error",
-        confirmButtonColor: "#333",
+        buttonsStyling: false,
+        background: "#ffffff",
+        color: "#0f172a",
+        iconColor: "#dc2626",
+        customClass: {
+          popup: "swal2-site-popup",
+          title: "swal2-site-title",
+          htmlContainer: "swal2-site-html",
+          confirmButton: "swal2-site-confirm",
+        },
       });
     }
   };

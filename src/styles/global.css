@@ -308,3 +308,56 @@ body {
     flex-direction: column;
   }
 }
+
+/* SweetAlert2 - site theme */
+.swal2-site-popup {
+  border-radius: 24px;
+  padding: 28px 28px 22px;
+  box-shadow: 0 25px 60px rgba(2, 8, 23, 0.25);
+}
+
+.swal2-site-title {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-top: 6px;
+}
+
+.swal2-site-html {
+  margin-top: 8px;
+  color: rgba(15, 23, 42, 0.75);
+  font-size: 1rem;
+}
+
+.swal2-site-confirm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 10px 18px;
+  border-radius: 12px;
+
+  background: #ebf1ff; /* matches your button */
+  color: var(--firmBlue);
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.swal2-site-confirm:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(2, 8, 23, 0.18);
+}
+
+.swal2-site-confirm:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, 0.65),
+    0 0 0 6px rgba(59, 130, 246, 0.35);
+}
