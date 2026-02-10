@@ -258,6 +258,35 @@ body {
   background-size: cover;
 }
 
+.bg-gradient-bright {
+  background:
+    radial-gradient(
+      ellipse at 50% 42%,
+      rgba(224, 242, 254, 0.75) 0%,
+      rgba(186, 230, 253, 0.62) 12%,
+      rgba(125, 211, 252, 0.48) 24%,
+      rgba(96, 165, 250, 0.36) 36%,
+      rgba(59, 130, 246, 0.24) 48%,
+      transparent 82%
+    ),
+    radial-gradient(
+      ellipse at 50% 75%,
+      transparent 0%,
+      rgba(4, 38, 159, 0.34) 55%,
+      transparent 78%
+    ),
+    linear-gradient(
+      to bottom,
+      #2158c8 0%,
+      #184aa9 38%,
+      #0f3f86 70%,
+      #08266a 100%
+    );
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .bg-gradient-reversed {
   background:
     /* Inverted highlight — energy pushed outward */

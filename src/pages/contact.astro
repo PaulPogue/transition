@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import ScheduleButtonLarge from '../components/buttons/ScheduleButtonLarge.astro';
 import BroadStreet from '../assets/images/BroadStreet.png';
 import ContactForm from '../components/ContactForm';
+import CourthouseExterior from '../assets/images/CourthouseExterior.jpg';
 import { FaLocationDot } from 'react-icons/fa6';
 import { FaPhone } from 'react-icons/fa';
 import { FaFax } from 'react-icons/fa';
@@ -10,36 +11,41 @@ import { FaFax } from 'react-icons/fa';
 
 <Layout>
   <!-- Contact Section -->
-  <section class="bg-gradient relative w-full py-24">
+  <section
+    class="relative overflow-hidden min-h-[560px] md:min-h-[720px] lg:min-h-[820px]"
+  >
     <!-- Background layers (desktop only) -->
-    <!-- <div class="absolute inset-0 hidden md:block z-0 pointer-events-none"> -->
-    <!-- Background image -->
-    <!-- <div
-        class="absolute inset-0 bg-cover bg-center"
-        style={`background-image: url('${BroadStreet.src}');`}
+    <div class="absolute inset-0 hidden md:block z-0">
+      <!-- Background image -->
+      <div
+        class="absolute inset-0 bg-no-repeat"
+        style={`background-image: url('${CourthouseExterior.src}');
+            background-size: 105% auto;
+            background-position: 75% 40%;`}
       >
-      </div> -->
+      </div>
 
-    <!-- Brand color wash -->
-    <!-- <div class="absolute inset-0 bg-[var(--firmDarkBlue)]/50"></div> -->
+      <!-- Brand color wash -->
+      <div class="absolute inset-0 bg-[var(--firmDarkBlue)]/60"></div>
 
-    <!-- Gradient for legibility -->
-    <!-- <div
+      <!-- Gradient for legibility -->
+      <div
         class="absolute inset-0 bg-gradient-to-b from-transparent to-black/30"
       >
-      </div> -->
-
-    <!-- Photo credit -->
-    <!-- <div
+      </div>
+      <!-- Photo credit -->
+      <div
         class="absolute bottom-4 left-6 text-[11px] tracking-widest uppercase
-               text-white/50 select-none"
+           text-white/50 select-none pointer-events-none"
       >
-        Broad Street • Central City, KY • CIRCA 1980
-      </div> -->
-    <!-- </div> -->
+        Muhlenberg County Courthouse • Greenville, KY
+      </div>
+    </div>
 
     <!-- Content -->
-    <div class="relative z-10 px-4 sm:px-10 text-white">
+    <div
+      class="relative z-10 bg-gradient-bright max-w-3xl rounded-3xl mx-auto px-4 py-8 my-16 sm:px-10"
+    >
       <div class="max-w-3xl mx-auto flex justify-center">
         <div class="w-full">
           <ContactForm client:load />
