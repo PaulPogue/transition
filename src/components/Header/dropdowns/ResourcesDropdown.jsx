@@ -1,114 +1,96 @@
 import React from "react";
 
-const IconSlot = ({ children }) => (
-  <span className="flex w-12 items-center justify-start shrink-0">
-    {children}
-  </span>
+const LogoSlot = ({ children }) => (
+  <div className="h-10 flex items-end pb-1 justify-center">{children}</div>
 );
 
 const IRSIcon = () => (
-  <img
-    src="/logos/IRS-Logo.svg"
-    alt="IRS"
-    className="h-7 w-11 object-contain object-left opacity-80"
-  />
+  <LogoSlot>
+    <div>
+      <img
+        src="/logos/IRS-Logo.svg"
+        alt="IRS"
+        className="h-5.5 w-auto object-contain"
+      />
+    </div>
+  </LogoSlot>
 );
 
 const KYDORIcon = () => (
-  <img
-    src="/logos/revenue-logo.svg"
-    alt="KY DOR"
-    className="h-7 w-10 object-contain object-left opacity-80"
-  />
+  <LogoSlot>
+    <img
+      src="/logos/revenue-logo.svg"
+      alt="KY DOR"
+      className="h-8 w-auto object-contain"
+    />
+  </LogoSlot>
 );
 
 const ResourcesDropdown = () => (
-  <div className="p-4">
-    {/* Calculators */}
-    <h3 className="text-gray-900 font-semibold">Calculators</h3>
-    <ul className="space-y-1">
-      <li>
-        <a
-          href="https://www.irs.gov/individuals/tax-withholding-estimator"
-          className="flex items-center gap-4 text-gray-500 hover:bg-gray-200 hover:rounded-lg px-3 py-1"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <IconSlot>
-            <IRSIcon />
-          </IconSlot>
-          <span className="text-gray-700 leading-none">
-            Withholding Calculator
-          </span>
-        </a>
-      </li>
-    </ul>
+  <div className="p-4 min-w-[360px] ">
+    <h3 className="text-lg text-gray-800 font-semibold">Calculators</h3>
 
-    {/* Payments */}
-    <h3 className="text-gray-800 font-semibold mt-4">Payments</h3>
-    <ul className="space-y-1">
-      <li>
-        <a
-          href="https://www.irs.gov/payments"
-          className="flex items-center gap-4 text-gray-500 hover:bg-gray-200 hover:rounded-lg px-3 py-1"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <IconSlot>
-            <IRSIcon />
-          </IconSlot>
-          <span className="text-gray-700 leading-none">Make a Payment</span>
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://epayment.ky.gov/epay"
-          className="flex items-center gap-4 text-gray-500 hover:bg-gray-200 hover:rounded-lg px-3 py-1"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <IconSlot>
-            <KYDORIcon />
-          </IconSlot>
-          <span className="text-gray-700 leading-none">Make a Payment</span>
-        </a>
-      </li>
-    </ul>
+    <div className="grid grid-cols-2 gap-3 mb-6">
+      <a
+        href="https://www.irs.gov/individuals/tax-withholding-estimator"
+        className="flex flex-col items-center gap-0.5 hover:bg-gray-100 rounded-lg px-1 py-1"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <IRSIcon />
+        <span className="text-gray-600 text-base font-medium text-center leading-snug">
+          Withholding <br />
+          Calculator
+        </span>
+      </a>
 
-    {/* Refunds */}
-    <h3 className="text-gray-800 font-semibold mt-4">Refunds</h3>
-    <ul className="space-y-1">
-      <li>
-        <a
-          href="https://www.irs.gov/wheres-my-refund"
-          className="flex items-center gap-4 text-gray-500 hover:bg-gray-200 hover:rounded-lg px-3 py-1"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <IconSlot>
-            <IRSIcon />
-          </IconSlot>
-          <span className="text-gray-700 leading-none">
-            Where&apos;s My Refund?
-          </span>
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://refund.ky.gov/"
-          className="flex items-center gap-4 hover:bg-gray-200 hover:rounded-lg px-3 py-1"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <IconSlot>
-            <KYDORIcon />
-          </IconSlot>
-          <span className="text-gray-700 leading-none">
-            Where&apos;s My Refund?
-          </span>
-        </a>
-      </li>
-    </ul>
+      {/* Placeholder cell for layout balance */}
+      <div aria-hidden="true" />
+    </div>
+
+    <h3 className="text-lg text-gray-800 font-semibold">Make a Tax Payment</h3>
+    <div className="flex gap-3 mb-8">
+      <a
+        href="https://www.irs.gov/payments"
+        className="flex-1 flex flex-col items-center gap-0.5 hover:bg-gray-100 rounded-lg px-1 py-1"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <IRSIcon />
+        <span className="text-lg text-gray-600 font-medium">Federal</span>
+      </a>
+      <a
+        href="https://epayment.ky.gov/epay"
+        className="flex-1 flex flex-col items-center gap-0.5 hover:bg-gray-100 rounded-lg px-1 py-1"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <KYDORIcon />
+        <span className="text-base text-gray-600 font-medium">Kentucky</span>
+      </a>
+    </div>
+
+    <h3 className="text-lg text-gray-800 font-semibold">Where's My Refund?</h3>
+    <div className="flex gap-3">
+      <a
+        href="https://www.irs.gov/wheres-my-refund"
+        className="flex-1 flex flex-col items-center gap-0.5 hover:bg-gray-100 rounded-lg px-1 py-1"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <IRSIcon />
+        <span className="text-base text-gray-600 font-medium">Federal</span>
+      </a>
+      <a
+        href="https://refund.ky.gov/"
+        className="flex-1 flex flex-col items-center gap-0.5 hover:bg-gray-100 rounded-lg px-1 py-1"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <KYDORIcon />
+        <span className="text-base text-gray-600 font-medium">Kentucky</span>
+      </a>
+    </div>
   </div>
 );
 
